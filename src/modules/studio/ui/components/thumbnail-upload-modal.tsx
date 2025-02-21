@@ -17,10 +17,10 @@ export const ThumbnailUplaodModal = ({
   const utils = trpc.useUtils()
 
   const onUploadComplete = () => {
-    onOpenChange(false)
-    utils.studio.getMany.invalidate()
-    utils.studio.getOne.invalidate({ id: videoId })
-  }
+    utils.studio.getMany.invalidate();
+    utils.studio.getOne.invalidate({ id: videoId });
+    onOpenChange(false);
+  };
 
   return (
     <ResponsiveModal title="Upload a thumbnail" open={open} onOpenChange={onOpenChange}>
